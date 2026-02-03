@@ -1,20 +1,21 @@
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { scrollToElement } from "@/lib/scroll";
 
 const footerLinks = {
   product: [
-    { name: "Features", href: "/praxis-website/#features" },
-    { name: "Safety", href: "/praxis-website/#compliance" },
-    { name: "Analytics", href: "/praxis-website/#industrial-future" },
+    { name: "Features", target: "features" },
+    { name: "Safety", target: "compliance" },
+    { name: "Analytics", target: "industrial-future" },
   ],
   company: [
-    { name: "About", href: "/praxis-website/#/" },
-    { name: "Careers", href: "/praxis-website/#/" },
-    { name: "Contact", href: "/praxis-website/#contact" },
+    { name: "About", target: "home" },
+    { name: "Careers", target: "home" },
+    { name: "Contact", target: "contact" },
   ],
   legal: [
-    { name: "Privacy", href: "/praxis-website/#/" },
-    { name: "Terms", href: "/praxis-website/#/" },
-    { name: "GDPR", href: "/praxis-website/#/" },
+    { name: "Privacy", target: "home" },
+    { name: "Terms", target: "home" },
+    { name: "GDPR", target: "home" },
   ],
 };
 
@@ -40,12 +41,12 @@ export const Footer = () => {
               Request Demo
               <ArrowRight className="h-4 w-4" />
             </a>
-            <a
-              href="/praxis-website/#features"
+            <button
+              onClick={() => scrollToElement("features")}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-foreground rounded-full font-medium hover:bg-gray-100 transition-colors border border-black/10"
             >
               Learn More
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -84,9 +85,9 @@ export const Footer = () => {
               <ul className="space-y-2">
                 {footerLinks.product.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    <button onClick={() => scrollToElement(link.target)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                       {link.name}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -97,9 +98,9 @@ export const Footer = () => {
               <ul className="space-y-2">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    <button onClick={() => scrollToElement(link.target)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                       {link.name}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -110,9 +111,9 @@ export const Footer = () => {
               <ul className="space-y-2">
                 {footerLinks.legal.map((link) => (
                   <li key={link.name}>
-                    <a href={link.href} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    <button onClick={() => scrollToElement(link.target)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                       {link.name}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>

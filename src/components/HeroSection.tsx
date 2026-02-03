@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { scrollToElement } from "@/lib/scroll";
 
 export const HeroSection = () => {
   return (
@@ -37,20 +38,20 @@ export const HeroSection = () => {
 
         {/* CTA Links */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-delay-3">
-          <a
-            href="#product"
+          <button
+            onClick={() => scrollToElement("product")}
             className="inline-flex items-center gap-2 text-xl text-blue-400 hover:text-blue-300 transition-colors"
           >
             Learn more
             <ArrowRight className="h-5 w-5" />
-          </a>
-          <a
-            href="#contact"
+          </button>
+          <button
+            onClick={() => scrollToElement("contact")}
             className="inline-flex items-center gap-2 text-xl text-white/80 hover:text-white transition-colors"
           >
             Request a demo
             <ArrowRight className="h-5 w-5" />
-          </a>
+          </button>
         </div>
       </div>
 
