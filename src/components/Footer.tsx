@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { scrollToElement } from "@/lib/scroll";
 
 const footerLinks = {
@@ -13,13 +14,29 @@ const footerLinks = {
     { name: "Contact", target: "contact" },
   ],
   legal: [
-    { name: "Privacy", target: "home" },
-    { name: "Terms", target: "home" },
-    { name: "GDPR", target: "home" },
+    { name: "Privacy", path: "/privacy" },
+    { name: "Terms", path: "/terms" },
+    { name: "GDPR", path: "/gdpr" },
   ],
 };
 
 export const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (target: string) => {
+    // If not on homepage, navigate to homepage first
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        scrollToElement(target);
+      }, 100);
+    } else {
+      scrollToElement(target);
+    }
+  };
+
   return (
     <footer id="contact" className="bg-[#f5f5f7]">
       {/* CTA Section */}
@@ -42,7 +59,7 @@ export const Footer = () => {
               <ArrowRight className="h-4 w-4" />
             </a>
             <button
-              onClick={() => scrollToElement("features")}
+              onClick={() => handleNavClick("features")}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-foreground rounded-full font-medium hover:bg-gray-100 transition-colors border border-black/10"
             >
               Learn More
@@ -85,7 +102,7 @@ export const Footer = () => {
               <ul className="space-y-2">
                 {footerLinks.product.map((link) => (
                   <li key={link.name}>
-                    <button onClick={() => scrollToElement(link.target)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    <button onClick={() => handleNavClick(link.target)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                       {link.name}
                     </button>
                   </li>
@@ -98,7 +115,7 @@ export const Footer = () => {
               <ul className="space-y-2">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
-                    <button onClick={() => scrollToElement(link.target)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    <button onClick={() => handleNavClick(link.target)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                       {link.name}
                     </button>
                   </li>
@@ -111,9 +128,9 @@ export const Footer = () => {
               <ul className="space-y-2">
                 {footerLinks.legal.map((link) => (
                   <li key={link.name}>
-                    <button onClick={() => scrollToElement(link.target)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    <Link to={link.path} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                       {link.name}
-                    </button>
+                    </Link>
                   </li>
                 ))}
               </ul>

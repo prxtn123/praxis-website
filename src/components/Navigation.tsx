@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { scrollToElement } from "@/lib/scroll";
 
@@ -12,6 +13,11 @@ const navLinks = [
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Check if we're on a light background page (not homepage)
+  const isLightPage = location.pathname !== "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,25 +28,35 @@ export const Navigation = () => {
   }, []);
 
   const handleNavClick = (target: string) => {
-    scrollToElement(target);
     setIsMobileMenuOpen(false);
+    
+    // If not on homepage, navigate to homepage first
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        scrollToElement(target);
+      }, 100);
+    } else {
+      scrollToElement(target);
+    }
   };
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "nav-apple border-b border-black/5" : "bg-transparent"
+        isScrolled || isLightPage ? "nav-apple border-b border-black/5" : "bg-transparent"
       }`}
     >
       <div className="max-w-[980px] mx-auto px-6">
         <div className="flex items-center justify-between h-12">
           {/* Logo */}
           <button 
-            onClick={() => scrollToElement("home")} 
+            onClick={() => handleNavClick("home")} 
             className="flex items-center gap-2"
           >
             <span className={`font-semibold text-xl tracking-tight transition-colors ${
-              isScrolled ? "text-foreground" : "text-white"
+              isScrolled || isLightPage ? "text-foreground" : "text-white"
             }`}>
               node
             </span>
@@ -53,7 +69,7 @@ export const Navigation = () => {
                 key={link.name}
                 onClick={() => handleNavClick(link.target)}
                 className={`text-xs font-normal transition-colors ${
-                  isScrolled 
+                  isScrolled || isLightPage
                     ? "text-foreground/80 hover:text-foreground" 
                     : "text-white/80 hover:text-white"
                 }`}
@@ -68,7 +84,7 @@ export const Navigation = () => {
             <button
               onClick={() => handleNavClick("contact")}
               className={`text-xs font-normal transition-colors ${
-                isScrolled
+                isScrolled || isLightPage
                   ? "text-blue-500 hover:text-blue-600"
                   : "text-blue-400 hover:text-blue-300"
               }`}
@@ -80,7 +96,7 @@ export const Navigation = () => {
           {/* Mobile Menu Button */}
           <button
             className={`md:hidden p-2 transition-colors ${
-              isScrolled ? "text-foreground" : "text-white"
+              isScrolled || isLightPage ? "text-foreground" : "text-white"
             }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
