@@ -39,7 +39,9 @@ export const Navigation = () => {
             onClick={() => scrollToElement("home")} 
             className="flex items-center gap-2"
           >
-            <span className="font-semibold text-xl tracking-tight text-foreground">
+            <span className={`font-semibold text-xl tracking-tight transition-colors ${
+              isScrolled ? "text-foreground" : "text-white"
+            }`}>
               node
             </span>
           </button>
@@ -50,7 +52,11 @@ export const Navigation = () => {
               <button
                 key={link.name}
                 onClick={() => handleNavClick(link.target)}
-                className="text-xs font-normal text-foreground/80 hover:text-foreground transition-colors"
+                className={`text-xs font-normal transition-colors ${
+                  isScrolled 
+                    ? "text-foreground/80 hover:text-foreground" 
+                    : "text-white/80 hover:text-white"
+                }`}
               >
                 {link.name}
               </button>
@@ -61,7 +67,11 @@ export const Navigation = () => {
           <div className="hidden md:block">
             <button
               onClick={() => handleNavClick("contact")}
-              className="text-xs font-normal text-blue-500 hover:text-blue-600 transition-colors"
+              className={`text-xs font-normal transition-colors ${
+                isScrolled
+                  ? "text-blue-500 hover:text-blue-600"
+                  : "text-blue-400 hover:text-blue-300"
+              }`}
             >
               Request Demo
             </button>
@@ -69,7 +79,9 @@ export const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-foreground"
+            className={`md:hidden p-2 transition-colors ${
+              isScrolled ? "text-foreground" : "text-white"
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
