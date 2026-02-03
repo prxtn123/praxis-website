@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "Product", href: "#product" },
-  { name: "Features", href: "#features" },
-  { name: "Safety", href: "#compliance" },
-  { name: "Contact", href: "#contact" },
+  { name: "Product", href: "/praxis-website/#product" },
+  { name: "Features", href: "/praxis-website/#features" },
+  { name: "Safety", href: "/praxis-website/#compliance" },
+  { name: "Contact", href: "/praxis-website/#contact" },
 ];
 
 export const Navigation = () => {
@@ -29,7 +29,7 @@ export const Navigation = () => {
       <div className="max-w-[980px] mx-auto px-6">
         <div className="flex items-center justify-between h-12">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
+          <a href="/praxis-website/#/" className="flex items-center gap-2">
             <span className="font-semibold text-xl tracking-tight text-foreground">
               node
             </span>
@@ -51,7 +51,7 @@ export const Navigation = () => {
           {/* CTA */}
           <div className="hidden md:block">
             <a
-              href="#contact"
+              href="/praxis-website/#contact"
               className="text-xs font-normal text-blue-500 hover:text-blue-600 transition-colors"
             >
               Request Demo
@@ -82,7 +82,7 @@ export const Navigation = () => {
                 </a>
               ))}
               <a
-                href="#contact"
+                href="/praxis-website/#contact"
                 className="text-sm text-blue-500 hover:text-blue-600 py-2 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

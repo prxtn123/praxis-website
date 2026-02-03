@@ -2,19 +2,19 @@ import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 
 const footerLinks = {
   product: [
-    { name: "Features", href: "#features" },
-    { name: "Safety", href: "#compliance" },
-    { name: "Analytics", href: "#industrial-future" },
+    { name: "Features", href: "/praxis-website/#features" },
+    { name: "Safety", href: "/praxis-website/#compliance" },
+    { name: "Analytics", href: "/praxis-website/#industrial-future" },
   ],
   company: [
-    { name: "About", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "Contact", href: "#contact" },
+    { name: "About", href: "/praxis-website/#/" },
+    { name: "Careers", href: "/praxis-website/#/" },
+    { name: "Contact", href: "/praxis-website/#contact" },
   ],
   legal: [
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
-    { name: "GDPR", href: "#" },
+    { name: "Privacy", href: "/praxis-website/#/" },
+    { name: "Terms", href: "/praxis-website/#/" },
+    { name: "GDPR", href: "/praxis-website/#/" },
   ],
 };
 
@@ -41,7 +41,7 @@ export const Footer = () => {
               <ArrowRight className="h-4 w-4" />
             </a>
             <a
-              href="#features"
+              href="/praxis-website/#features"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-foreground rounded-full font-medium hover:bg-gray-100 transition-colors border border-black/10"
             >
               Learn More
