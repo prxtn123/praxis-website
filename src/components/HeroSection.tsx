@@ -12,7 +12,7 @@ export const HeroSection = () => {
           alt="AI-powered warehouse safety"
           className="w-full h-full object-cover opacity-10"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/40 to-white" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-white" />
       </div>
 
       {/* Content */}
