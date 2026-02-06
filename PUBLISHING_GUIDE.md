@@ -1,0 +1,145 @@
+# Publishing Guide for nodehub.uk
+
+## 📍 Index Files Location
+
+Your project contains the following index/entry point files:
+
+### 1. **Main HTML Entry Point**
+**Location:** `/index.html` (root directory)
+- This is the main HTML file that browsers load
+- Contains the app metadata, title, and SEO information
+- References `/src/main.tsx` as the JavaScript entry point
+
+### 2. **Main JavaScript/TypeScript Entry Point**
+**Location:** `/src/main.tsx`
+- This is the main React application entry point
+- Renders the App component into the `#root` div
+- Imports the main CSS file
+
+### 3. **Main CSS Entry Point**
+**Location:** `/src/index.css`
+- Global styles and Tailwind CSS imports
+- Imported by `main.tsx`
+
+## 🚀 How to Publish to nodehub.uk
+
+### Step 1: Build the Project
+
+Before publishing, you need to build your project for production:
+
+```bash
+npm run build
+```
+
+or if using Bun:
+
+```bash
+bun run build
+```
+
+This will create a `dist/` directory containing:
+- Optimized HTML, CSS, and JavaScript files
+- All assets (images, fonts, etc.)
+- The production-ready version of your app
+
+### Step 2: Locate Build Output
+
+After building, your publishable files will be in:
+```
+dist/
+├── index.html          # Main entry point (generated from root index.html)
+├── 404.html            # Fallback for hash routing on static hosts
+├── assets/             # Bundled JS, CSS, and other assets
+│   ├── index-[hash].js
+│   ├── index-[hash].css
+│   └── ...
+└── [other static files]
+```
+
+### Step 3: Publishing Options
+
+#### Option A: Deploy the entire `dist/` folder
+Upload all contents of the `dist/` directory to nodehub.uk
+
+#### Option B: Use a deployment script
+If nodehub.uk supports automated deployments, configure it to:
+1. Run `npm install` (or `bun install`)
+2. Run `npm run build` (or `bun run build`)
+3. Serve files from the `dist/` directory
+
+## 🔧 Hash Routing for Static Hosts
+
+**Important:** This application uses **hash-based routing** (`HashRouter`) to ensure compatibility with static hosting platforms like nodehub.uk, GitHub Pages, and others that don't support server-side URL rewrites.
+
+### What this means:
+- URLs will include a `#` symbol, e.g., `https://yoursite.com/#/privacy`
+- All routes work on static hosting without server configuration
+- The `404.html` file automatically redirects unknown URLs to the correct hash route
+
+### Why hash routing?
+Static hosts serve files directly and can't redirect `/privacy` to `/index.html` like a server would. Hash routing solves this by making all navigation happen on the client side, so only `index.html` is ever requested from the server.
+
+## 📦 Project Structure
+
+```
+node-3.0/
+├── index.html                 # ← Main HTML entry point
+├── src/
+│   ├── main.tsx              # ← Main React/TS entry point
+│   ├── index.css             # ← Main CSS file
+│   ├── App.tsx               # Root React component (uses HashRouter)
+│   ├── components/           # React components
+│   ├── pages/                # Page components
+│   ├── hooks/                # Custom hooks
+│   └── lib/                  # Utilities
+├── public/                   # Static assets
+│   └── 404.html             # Hash routing fallback
+├── package.json              # Dependencies and scripts
+└── vite.config.ts           # Vite configuration
+```
+
+## 🔍 Quick Reference
+
+| File/Folder | Purpose | Publish? |
+|-------------|---------|----------|
+| `index.html` | HTML entry point | ✅ Yes (auto-included in build) |
+| `src/main.tsx` | JS entry point | ✅ Yes (bundled in build) |
+| `src/index.css` | CSS entry point | ✅ Yes (bundled in build) |
+| `public/404.html` | Hash routing fallback | ✅ Yes (copied to dist) |
+| `dist/` | Build output | ✅ **This is what you publish** |
+| `node_modules/` | Dependencies | ❌ No |
+| `src/` (source) | Source code | ❌ No (only the built version) |
+
+## 💡 Important Notes
+
+1. **Always build before publishing** - Don't publish the source code directly
+2. **The `dist/` folder is gitignored** - It's generated fresh each build
+3. **Your entry point for users** - Will always be `dist/index.html` after build
+4. **Hash routing is enabled** - URLs will have `#` for static host compatibility
+5. **Custom domain setup** - If using a custom domain, you may need to update the `CNAME` file
+
+## 🛠️ Troubleshooting
+
+### Build fails?
+```bash
+# Clean install
+rm -rf node_modules package-lock.json
+npm install
+npm run build
+```
+
+### Need to preview the build locally?
+```bash
+npm run preview
+```
+
+This will start a local server serving the `dist/` folder at `http://localhost:4173`
+
+### Blank page after deployment?
+This was fixed by switching from BrowserRouter to HashRouter. Make sure you're deploying the latest build from the `dist/` folder.
+
+## 📞 Need Help?
+
+- Check the [README.md](./README.md) for general project information
+- Review [Vite deployment docs](https://vitejs.dev/guide/static-deploy.html)
+- Ensure nodehub.uk is configured to serve static files from your `dist/` directory
