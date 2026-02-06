@@ -48,6 +48,7 @@ After building, your publishable files will be in:
 ```
 dist/
 ├── index.html          # Main entry point (generated from root index.html)
+├── 404.html            # Fallback for hash routing on static hosts
 ├── assets/             # Bundled JS, CSS, and other assets
 │   ├── index-[hash].js
 │   ├── index-[hash].css
@@ -66,6 +67,18 @@ If nodehub.uk supports automated deployments, configure it to:
 2. Run `npm run build` (or `bun run build`)
 3. Serve files from the `dist/` directory
 
+## 🔧 Hash Routing for Static Hosts
+
+**Important:** This application uses **hash-based routing** (`HashRouter`) to ensure compatibility with static hosting platforms like nodehub.uk, GitHub Pages, and others that don't support server-side URL rewrites.
+
+### What this means:
+- URLs will include a `#` symbol, e.g., `https://yoursite.com/#/privacy`
+- All routes work on static hosting without server configuration
+- The `404.html` file automatically redirects unknown URLs to the correct hash route
+
+### Why hash routing?
+Static hosts serve files directly and can't redirect `/privacy` to `/index.html` like a server would. Hash routing solves this by making all navigation happen on the client side, so only `index.html` is ever requested from the server.
+
 ## 📦 Project Structure
 
 ```
@@ -74,12 +87,13 @@ node-3.0/
 ├── src/
 │   ├── main.tsx              # ← Main React/TS entry point
 │   ├── index.css             # ← Main CSS file
-│   ├── App.tsx               # Root React component
+│   ├── App.tsx               # Root React component (uses HashRouter)
 │   ├── components/           # React components
 │   ├── pages/                # Page components
 │   ├── hooks/                # Custom hooks
 │   └── lib/                  # Utilities
 ├── public/                   # Static assets
+│   └── 404.html             # Hash routing fallback
 ├── package.json              # Dependencies and scripts
 └── vite.config.ts           # Vite configuration
 ```
@@ -91,6 +105,7 @@ node-3.0/
 | `index.html` | HTML entry point | ✅ Yes (auto-included in build) |
 | `src/main.tsx` | JS entry point | ✅ Yes (bundled in build) |
 | `src/index.css` | CSS entry point | ✅ Yes (bundled in build) |
+| `public/404.html` | Hash routing fallback | ✅ Yes (copied to dist) |
 | `dist/` | Build output | ✅ **This is what you publish** |
 | `node_modules/` | Dependencies | ❌ No |
 | `src/` (source) | Source code | ❌ No (only the built version) |
@@ -100,7 +115,8 @@ node-3.0/
 1. **Always build before publishing** - Don't publish the source code directly
 2. **The `dist/` folder is gitignored** - It's generated fresh each build
 3. **Your entry point for users** - Will always be `dist/index.html` after build
-4. **Custom domain setup** - If using a custom domain, you may need to update the `CNAME` file
+4. **Hash routing is enabled** - URLs will have `#` for static host compatibility
+5. **Custom domain setup** - If using a custom domain, you may need to update the `CNAME` file
 
 ## 🛠️ Troubleshooting
 
@@ -118,6 +134,9 @@ npm run preview
 ```
 
 This will start a local server serving the `dist/` folder at `http://localhost:4173`
+
+### Blank page after deployment?
+This was fixed by switching from BrowserRouter to HashRouter. Make sure you're deploying the latest build from the `dist/` folder.
 
 ## 📞 Need Help?
 
