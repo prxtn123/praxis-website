@@ -77,6 +77,15 @@ This project is built with:
 
 ## How can I deploy this project?
 
+### Option 1: Deploy to nodehub.uk or any static host
+
+1. Build the project: `npm run build`
+2. Upload the `dist/` folder to your hosting platform
+3. See [PUBLISHING_GUIDE.md](./PUBLISHING_GUIDE.md) for detailed instructions
+4. Quick reference: [docs/INDEX_FILES.md](./docs/INDEX_FILES.md)
+
+### Option 2: Deploy via Lovable
+
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
 ## Can I connect a custom domain to my Lovable project?
