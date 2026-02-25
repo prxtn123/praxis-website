@@ -1,5 +1,4 @@
 import { AlertTriangle, Eye, Gauge, Route } from "lucide-react";
-import cameraDetection from "@/assets/camera-detection.jpg";
 
 const detectionFeatures = [
   { icon: AlertTriangle, label: "No-Vest Detection" },
@@ -12,9 +11,9 @@ export const NearMissSection = () => {
   return (
     <section id="features" className="py-32 bg-[#f5f5f7]">
       <div className="max-w-[980px] mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
           {/* Content */}
-          <div className="order-2 lg:order-1">
+          <div>
             <p className="text-sm font-medium text-blue-500 mb-4">Near-Miss Prevention</p>
 
             <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight mb-6">
@@ -24,8 +23,8 @@ export const NearMissSection = () => {
             </h2>
 
             <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-              Identify and alert on potential near misses in real time — no high-vis vest, 
-              zone violations, unsafe proximity — so teams can intervene instantly.
+              Identify and alert on potential near misses in real time - no high-vis vest, 
+              zone violations, unsafe proximity - so teams can intervene instantly.
             </p>
 
             {/* Feature Pills */}
@@ -42,16 +41,7 @@ export const NearMissSection = () => {
             </div>
           </div>
 
-          {/* Image */}
-          <div className="order-1 lg:order-2">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src={cameraDetection}
-                alt="AI camera detection"
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
+
         </div>
       </div>
     </section>

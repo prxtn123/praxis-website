@@ -47,8 +47,8 @@ export default function Legal() {
 
             <h3 className="text-xl font-semibold text-black mt-8 mb-4">Legal basis for processing</h3>
             <ul className="list-disc pl-6 mb-8 space-y-2 text-gray-700">
-              <li><strong>Legitimate interests</strong> – responding to enquiries, basic analytics, site security (balanced against your rights and freedoms).</li>
-              <li><strong>Consent</strong> – for non-essential cookies and direct marketing emails (you can withdraw consent at any time).</li>
+              <li><strong>Legitimate interests</strong> - responding to enquiries, basic analytics, site security (balanced against your rights and freedoms).</li>
+              <li><strong>Consent</strong> - for non-essential cookies and direct marketing emails (you can withdraw consent at any time).</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-black mt-8 mb-4">Who we share your data with</h3>
@@ -63,7 +63,7 @@ export default function Legal() {
             <h3 className="text-xl font-semibold text-black mt-8 mb-4">Data retention</h3>
             <ul className="list-disc pl-6 mb-8 space-y-2 text-gray-700">
               <li><strong>Enquiry/contact data:</strong> retained for up to 2 years (or longer if active business discussions continue).</li>
-              <li><strong>Server logs & analytics:</strong> typically 14–26 months (configurable per tool).</li>
+              <li><strong>Server logs & analytics:</strong> typically 14-26 months (configurable per tool).</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-black mt-8 mb-4">Your rights under UK GDPR</h3>
@@ -73,7 +73,7 @@ export default function Legal() {
               <li>Restrict or object to processing</li>
               <li>Data portability (where technically feasible)</li>
               <li>Withdraw consent at any time</li>
-              <li>Lodge a complaint with the Information Commissioner's Office (ICO) – <a href="https://ico.org.uk" className="text-blue-600 hover:text-blue-700">ico.org.uk</a></li>
+              <li>Lodge a complaint with the Information Commissioner's Office (ICO) - <a href="https://ico.org.uk" className="text-blue-600 hover:text-blue-700">ico.org.uk</a></li>
             </ul>
             <p className="text-gray-700 leading-relaxed mb-8">
               To exercise any of these rights, email <a href="mailto:privacy@praxisgb.com" className="text-blue-600 hover:text-blue-700">privacy@praxisgb.com</a>. We will respond within one month.

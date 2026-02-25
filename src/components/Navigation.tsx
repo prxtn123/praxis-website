@@ -3,8 +3,9 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { scrollToElement } from "@/lib/scroll";
 
-const navLinks = [
+const navLinks: { name: string; target?: string; path?: string }[] = [
   { name: "Product", target: "product" },
+  { name: "How it works", path: "/how-it-works" },
   { name: "Features", target: "features" },
   { name: "Safety", target: "compliance" },
   { name: "Contact", target: "contact" },
@@ -29,18 +30,24 @@ export const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (target: string) => {
+  const handleNavClick = (link: { target?: string; path?: string }) => {
     setIsMobileMenuOpen(false);
-    
-    // If not on homepage, navigate to homepage first
-    if (location.pathname !== "/") {
-      navigate("/");
-      // Wait for navigation to complete, then scroll
-      setTimeout(() => {
-        scrollToElement(target);
-      }, 100);
-    } else {
-      scrollToElement(target);
+
+    if (link.path) {
+      navigate(link.path);
+      return;
+    }
+
+    if (link.target) {
+      // If not on homepage, navigate to homepage first
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => {
+          scrollToElement(link.target!);
+        }, 100);
+      } else {
+        scrollToElement(link.target);
+      }
     }
   };
 
@@ -54,13 +61,13 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-12">
           {/* Logo */}
           <button 
-            onClick={() => handleNavClick("home")} 
+            onClick={() => handleNavClick({ target: "home" })} 
             className="flex items-center gap-2"
           >
             <span className={`font-semibold text-xl tracking-tight transition-colors ${
               isScrolled || isLightPage ? "text-foreground" : "text-white"
             }`}>
-              node
+              .node
             </span>
           </button>
 
@@ -69,7 +76,7 @@ export const Navigation = () => {
             {navLinks.map((link) => (
               <button
                 key={link.name}
-                onClick={() => handleNavClick(link.target)}
+                onClick={() => handleNavClick(link)}
                 className={`text-xs font-normal transition-colors ${
                   isScrolled || isLightPage
                     ? "text-foreground/80 hover:text-foreground" 
@@ -84,7 +91,7 @@ export const Navigation = () => {
           {/* CTAs */}
           <div className="hidden md:flex items-center gap-4">
             <button
-              onClick={() => handleNavClick("contact")}
+              onClick={() => handleNavClick({ target: "contact" })}
               className={`text-xs font-normal transition-colors ${
                 isScrolled || isLightPage
                   ? "text-blue-500 hover:text-blue-600"
@@ -93,7 +100,7 @@ export const Navigation = () => {
             >
               Request Demo
             </button>
-            {/* Sign In — links to the dashboard app */}
+            {/* Sign In - links to the dashboard app */}
             <a
               href={APP_URL}
               className={`text-xs font-medium px-3 py-1.5 rounded-full transition-all ${
@@ -124,19 +131,19 @@ export const Navigation = () => {
               {navLinks.map((link) => (
                 <button
                   key={link.name}
-                  onClick={() => handleNavClick(link.target)}
+                  onClick={() => handleNavClick(link)}
                   className="text-sm text-foreground/80 hover:text-foreground py-2 transition-colors text-left"
                 >
                   {link.name}
                 </button>
               ))}
               <button
-                onClick={() => handleNavClick("contact")}
+                onClick={() => handleNavClick({ target: "contact" })}
                 className="text-sm text-blue-500 hover:text-blue-600 py-2 transition-colors text-left"
               >
                 Request Demo
               </button>
-              {/* Sign In — mobile */}
+              {/* Sign In - mobile */}
               <a
                 href={APP_URL}
                 className="text-sm font-medium text-foreground py-2 border-t border-black/5 mt-1 pt-3 transition-colors"

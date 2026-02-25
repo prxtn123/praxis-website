@@ -1,19 +1,10 @@
 import { ArrowRight } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
 import { scrollToElement } from "@/lib/scroll";
 
 export const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroBg}
-          alt="AI-powered warehouse safety"
-          className="w-full h-full object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black" />
-      </div>
+
 
       {/* Content */}
       <div className="relative z-10 max-w-[980px] mx-auto px-6 pt-20 pb-32 text-center">

@@ -1,5 +1,4 @@
 import { Ruler, Users, AlertCircle, Route } from "lucide-react";
-import proximityDetection from "@/assets/proximity-detection.jpg";
 
 const metrics = [
   { icon: Users, label: "MMHE-Pedestrian", value: "2.5m+", desc: "Safe distance maintained" },
@@ -11,9 +10,9 @@ export const ProximitySection = () => {
   return (
     <section className="py-32 bg-white">
       <div className="max-w-[980px] mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
           {/* Content */}
-          <div className="order-2 lg:order-1">
+          <div>
             <p className="text-sm font-medium text-blue-500 mb-4">Proximity Intelligence</p>
 
             <h2 className="text-4xl md:text-5xl font-semibold text-foreground tracking-tight mb-6">
@@ -49,16 +48,7 @@ export const ProximitySection = () => {
             </div>
           </div>
 
-          {/* Image */}
-          <div className="order-1 lg:order-2">
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src={proximityDetection}
-                alt="AI proximity detection"
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
