@@ -9,9 +9,9 @@ const footerLinks = {
     { name: "Analytics", target: "industrial-future" },
   ],
   company: [
-    { name: "About", target: "home" },
-    { name: "Careers", target: "home" },
-    { name: "Contact", target: "contact" },
+    { name: "About", path: "/about" },
+    { name: "Careers", path: "/careers" },
+    { name: "Contact", path: "/contact" },
   ],
   legal: [
     { name: "Privacy", path: "/privacy" },
@@ -115,9 +115,15 @@ export const Footer = () => {
               <ul className="space-y-2">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
-                    <button onClick={() => handleNavClick(link.target)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                      {link.name}
-                    </button>
+                    {link.path ? (
+                      <a href={link.path} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                        {link.name}
+                      </a>
+                    ) : (
+                      <button onClick={() => handleNavClick(link.target ?? "home")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                        {link.name}
+                      </button>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -4,11 +4,12 @@ import { Menu, X } from "lucide-react";
 import { scrollToElement } from "@/lib/scroll";
 
 const navLinks: { name: string; target?: string; path?: string }[] = [
-  { name: "Product", target: "product" },
+  { name: "Home", path: "/" },
+  { name: "Product", path: "/product" },
+  { name: "About", path: "/about" },
+  { name: "Resources", path: "/resources" },
   { name: "How it works", path: "/how-it-works" },
-  { name: "Features", target: "features" },
-  { name: "Safety", target: "compliance" },
-  { name: "Contact", target: "contact" },
+  { name: "Contact", path: "/contact" },
 ];
 
 const APP_URL = "https://app.nodehub.uk";
