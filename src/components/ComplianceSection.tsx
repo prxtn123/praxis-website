@@ -2,7 +2,7 @@ import { ClipboardCheck, Shield, BarChart3, FileCheck } from "lucide-react";
 
 const complianceFeatures = [
   { icon: ClipboardCheck, label: "Audit Logs", desc: "Complete audit trail" },
-  { icon: Shield, label: "Standards", desc: "ISO & OSHA ready" },
+  { icon: Shield, label: "Standards", desc: "Evidence-based reporting" },
   { icon: BarChart3, label: "Real-time", desc: "Live trend analysis" },
   { icon: FileCheck, label: "Reports", desc: "Auto-generated" },
 ];
@@ -21,8 +21,8 @@ export const ComplianceSection = () => {
           </h2>
 
           <p className="text-lg text-white/60 leading-relaxed">
-            Real-time monitoring ensures full adherence to ISO, OSHA, and internal standards.
-            Stay compliant without manual effort.
+            Real-time monitoring supports your compliance workflows with automated audit trails and evidence capture.
+            Stay on top of safety standards without manual effort.
           </p>
         </div>
 

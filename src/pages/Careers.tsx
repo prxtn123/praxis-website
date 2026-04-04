@@ -15,9 +15,9 @@ export default function Careers() {
       <section className="pt-32 pb-20 bg-[#f5f5f7] text-center">
         <div className="max-w-[980px] mx-auto px-6">
           <p className="text-sm font-medium text-blue-500 uppercase tracking-widest mb-2">Careers</p>
-          <h1 className="text-4xl md:text-6xl font-semibold">Build the next generation of safety intelligence.</h1>
+          <h1 className="text-4xl md:text-6xl font-semibold">Join Praxis GB.</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
-            NodeHub is scaling quickly. Join an early team that’s making logistics safer with real operational impact.
+            We're a small team building edge AI products in Greater Manchester. If you're interested in working with us, get in touch.
           </p>
         </div>
       </section>

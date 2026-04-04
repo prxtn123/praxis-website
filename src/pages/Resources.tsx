@@ -1,30 +1,30 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { FileText, BookOpen, Video, CircleDashed } from "lucide-react";
+import { FileText, CircleDashed } from "lucide-react";
 
 const resources = [
   {
-    type: "Whitepaper",
-    title: "Reducing warehouse incidents by 45% with machine vision",
-    summary: "An evidence-based report on how NodeHub’s analytics workflow delivered a 32% incident cost reduction in 18 months.",
+    type: "Product overview",
+    title: "How node works",
+    summary: "An overview of how edge-deployed safety monitoring works in practice, from camera to dashboard.",
+    link: "/how-it-works",
+  },
+  {
+    type: "Coming soon",
+    title: "Deployment playbook",
+    summary: "A practical guide for operations teams evaluating edge AI safety monitoring for their sites.",
     link: "#",
   },
   {
-    type: "Benchmark",
-    title: "Safety Maturity Score for distribution centres",
-    summary: "Learn the 6 KPIs required to move from reactive to predictive safety operations.",
+    type: "Coming soon",
+    title: "Technical architecture overview",
+    summary: "How node's edge-first architecture keeps video on-premise while delivering real-time intelligence.",
     link: "#",
   },
   {
-    type: "Case study",
-    title: "Global cold-chain operator: 60% fewer near misses",
-    summary: "Deployment story with action items and quantifiable ROI metrics at scale.",
-    link: "#",
-  },
-  {
-    type: "Video",
-    title: "How near-miss intelligence saves time and cost",
-    summary: "30-minute on-demand presentation with live dashboards and lifecycle insights.",
+    type: "Coming soon",
+    title: "Safety monitoring ROI framework",
+    summary: "A framework for estimating the impact of proactive safety monitoring on incident costs and compliance.",
     link: "#",
   },
 ];
@@ -37,9 +37,9 @@ export default function Resources() {
       <section className="pt-32 pb-20 bg-[#f8f8fb] text-center">
         <div className="max-w-[980px] mx-auto px-6">
           <p className="text-sm font-medium text-blue-500 mb-3">Resources</p>
-          <h1 className="text-4xl md:text-6xl font-semibold mb-4">Actionable safety content for executives and operations teams</h1>
+          <h1 className="text-4xl md:text-6xl font-semibold mb-4">Resources</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Downloadable research, product playbooks, and expert guidance from live NodeHub deployments.
+            Product documentation, technical overviews, and guides for operations teams.
           </p>
         </div>
       </section>
@@ -49,26 +49,30 @@ export default function Resources() {
           {resources.map((item) => (
             <article key={item.title} className="rounded-3xl p-6 border border-black/10 transition hover:shadow-md">
               <div className="mb-3 text-sm font-semibold text-blue-500 uppercase tracking-wide flex items-center gap-2">
-                {item.type === "Video" ? <Video className="h-4 w-4" /> : <FileText className="h-4 w-4" />}
+                <FileText className="h-4 w-4" />
                 {item.type}
               </div>
               <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">{item.summary}</p>
-              <a href={item.link} className="inline-flex items-center gap-2 text-blue-500 hover:underline">
-                View resource <CircleDashed className="h-4 w-4" />
-              </a>
+              {item.link !== "#" ? (
+                <a href={item.link} className="inline-flex items-center gap-2 text-blue-500 hover:underline">
+                  View resource <CircleDashed className="h-4 w-4" />
+                </a>
+              ) : (
+                <span className="text-sm text-muted-foreground italic">Coming soon</span>
+              )}
             </article>
           ))}
         </div>
       </main>
 
       <section className="py-16 bg-white text-center">
-        <h2 className="text-3xl font-semibold mb-3">Need tailored insights for your facility?</h2>
+        <h2 className="text-3xl font-semibold mb-3">Want to learn more?</h2>
         <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-          We can build a close-range analysis plan specific to your operation, with potential savings and KPIs pre-scoped.
+          Get in touch to discuss how node could work for your operation.
         </p>
         <a href="/contact" className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-black text-white font-medium hover:bg-black/80">
-          Request a strategic assessment
+          Contact us
         </a>
       </section>
 

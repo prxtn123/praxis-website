@@ -2,20 +2,20 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 
 const faqs = [
   {
-    question: "How quickly can NodeHub be installed on new sites?",
+    question: "How quickly can node be installed on new sites?",
     answer: "Most sites are live within 2-4 weeks from contract signature, including network readiness audit and pilot tuning."
   },
   {
     question: "Do we need to replace existing cameras?",
-    answer: "No. NodeHub supports standard RTSP/ONVIF cameras and can also work with new high-res cameras for the highest fidelity risk detection."
+    answer: "No. node supports standard RTSP/ONVIF cameras and can also work with new high-res cameras for the highest fidelity risk detection."
   },
   {
     question: "What data residency guarantees do you provide?",
     answer: "All video processing is on-prem. Metadata and incident logs are retained in your specified region (UK/EU/US) and we provide a DPA with SCCs."
   },
   {
-    question: "Can NodeHub integrate with our current MES/WMS?",
-    answer: "Yes. We support connectors for SAP EWM, Oracle WMS, Blue Yonder, and custom webhook/Kafka integrations."
+    question: "Can node integrate with our existing systems?",
+    answer: "node is designed to work alongside your existing infrastructure. Contact us for integration specifics."
   },
 ];
 

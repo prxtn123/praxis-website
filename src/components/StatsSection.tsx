@@ -8,8 +8,8 @@ const stats = [
   },
   {
     icon: Target,
-    value: "100%",
-    label: "Compliance adherence",
+    value: "Always-on",
+    label: "Compliance monitoring",
   },
   {
     icon: Clock,

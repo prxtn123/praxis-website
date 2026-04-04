@@ -4,6 +4,12 @@ import { scrollToElement } from "@/lib/scroll";
 export const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* IMAGE: Full-bleed background — warehouse/logistics floor with camera
+          perspective, showing workers and machinery. Dark overlay at 60-70%
+          opacity for text legibility. Dimensions: 1920x1080 min. */}
+      <div className="absolute inset-0 bg-black/70">
+        {/* Replace with: <img src="/images/node-hero-bg.jpg" alt="" className="h-full w-full object-cover opacity-40" /> */}
+      </div>
 
 
       {/* Content */}

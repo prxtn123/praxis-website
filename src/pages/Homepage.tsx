@@ -49,6 +49,16 @@ export default function Homepage() {
 
         {/* ─── HERO ─────────────────────────────────────────────────────── */}
         <section className="relative min-h-screen overflow-hidden" aria-label="Hero">
+          {/* IMAGE: Full-bleed hero background — dark, moody warehouse/industrial interior
+              with operative in high-vis, showing scale of environment. Desaturated, overlaid
+              with dark gradient so white text remains legible. Dimensions: 1920x1080 min. */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#070809]/80 via-[#070809]/60 to-[#070809]"
+          >
+            <div className="absolute inset-0 bg-[#070809]/70" />
+            {/* Replace with: <img src="/images/hero-bg.jpg" alt="" className="h-full w-full object-cover opacity-40" /> */}
+          </div>
           {/* scanline grid */}
           <div
             aria-hidden
@@ -153,6 +163,11 @@ export default function Homepage() {
               <h2 className="text-4xl font-bold leading-tight tracking-[-0.025em] text-white md:text-5xl">
                 Computer vision that works.
               </h2>
+              {/* IMAGE: Split-panel visual — edge device / camera setup in a live environment,
+                  showing hardware deployed on-site. 600x400 min. Dark treatment. */}
+              <div className="mt-6 aspect-[3/2] w-full rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center">
+                <span className="text-xs uppercase tracking-widest text-white/20">Image — edge device in situ</span>
+              </div>
             </div>
             <p className="self-end text-lg leading-9 text-white/55 reveal">
               Praxis GB builds computer vision applications for real-world problems. We design,
@@ -242,6 +257,11 @@ export default function Homepage() {
                   <div className="space-y-2.5 border-t border-white/[0.07] pt-6">
                     <p className="text-sm text-white/40">— <span className="text-white/70">90%</span> detection accuracy in real operations</p>
                     <p className="text-sm text-white/40">— <span className="text-white/70">&lt;100ms</span> alert turnaround, on-device</p>
+                  </div>
+                  {/* IMAGE: node dashboard screenshot — showing live detection feed with
+                      bounding boxes, safety score, and incident timeline. 800x500 min. */}
+                  <div className="mt-6 aspect-video w-full rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center">
+                    <span className="text-xs uppercase tracking-widest text-white/20">Screenshot — node dashboard</span>
                   </div>
                 </div>
                 <Link

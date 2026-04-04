@@ -1,13 +1,13 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { ShieldCheck, Cpu, Server, Zap, Link2, Lock, CheckCircle, ArrowRight } from "lucide-react";
+import { ShieldCheck, Cpu, Server, Zap, CheckCircle, ArrowRight } from "lucide-react";
 
 const productFeatures = [
   {
     icon: ShieldCheck,
     title: "Proactive hazard interception",
     description:
-      "AI analysis identifies and mitigates risks before they become incidents, using 99.4% detection accuracy across real environments.",
+      "AI analysis identifies and mitigates risks before they become incidents, with 90% detection accuracy in real operational environments.",
   },
   {
     icon: Cpu,
@@ -29,10 +29,6 @@ const productFeatures = [
   },
 ];
 
-const integrations = [
-  "Microsoft Azure", "AWS S3", "Grafana", "Slack", "Power BI", "Siemens MindSphere"
-];
-
 export default function Product() {
   return (
     <div className="min-h-screen bg-white">
@@ -40,7 +36,7 @@ export default function Product() {
 
       <section className="pt-32 pb-20 bg-black text-white">
         <div className="max-w-[980px] mx-auto px-6 text-center">
-          <p className="text-sm font-medium text-blue-400 mb-3">NodeHub Product Suite</p>
+          <p className="text-sm font-medium text-blue-400 mb-3">node product suite</p>
           <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05] mb-5">
             Safety intelligence-built for logistics teams.
           </h1>
@@ -80,13 +76,13 @@ export default function Product() {
         <div className="max-w-[980px] mx-auto px-6">
           <div className="mb-10 text-center">
             <p className="uppercase text-xs font-semibold tracking-widest text-blue-500 mb-2">Integrations</p>
-            <h2 className="text-3xl md:text-4xl font-semibold">Plug into your operational stack.</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold">Works with your existing infrastructure.</h2>
             <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
-              Interoperable with existing data infrastructure, tier 1 WMS systems and executive dashboards.
+              node connects to standard RTSP/ONVIF cameras and integrates with your operational stack via webhooks. Contact us for specifics.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {integrations.map((item) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {["RTSP cameras", "ONVIF devices", "Webhook / API", "Dashboard portal", "Email alerts", "Custom integrations"].map((item) => (
               <div key={item} className="rounded-xl border border-black/10 p-4 text-center text-sm font-medium">{item}</div>
             ))}
           </div>
@@ -99,10 +95,10 @@ export default function Product() {
             <div>
               <h2 className="text-3xl md:text-4xl font-semibold mb-4">Privacy, security, trust</h2>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                Full ISO 27001 ready controls and distributed deployment options. Data residency in the UK, EU or customer-owned private subnet.
+                Edge-first architecture with data residency in the UK. Video stays on your premises — always.
               </p>
               <ul className="space-y-3">
-                {["Edge-first architecture; video stays on-prem.", "Role-based access, SSO, MFA and audit trail.", "SOC-2 readiness, vulnerability scan reports included.", "DPA & standard contractual clauses maintained."]
+                {["Edge-first architecture; video stays on-prem.", "Role-based access and audit trail.", "No cloud video processing — ever.", "DPA available on request."]
                   .map((doc) => (
                     <li key={doc} className="flex items-start gap-2 text-sm text-foreground">
                       <CheckCircle className="h-4 w-4 text-blue-500 mt-1" />
@@ -112,13 +108,13 @@ export default function Product() {
               </ul>
             </div>
             <div className="rounded-3xl bg-white p-8 shadow-sm">
-              <h3 className="font-semibold mb-4">Modular stack example</h3>
+              <h3 className="font-semibold mb-4">How node deploys</h3>
               <div className="space-y-3 text-sm text-muted-foreground">
                 <p>1. Camera feed capture (RTSP, ONVIF)</p>
-                <p>2. NodeHub inference on Jetson/Edge GPU</p>
-                <p>3. Event stream to Kafka or HTTP webhook</p>
-                <p>4. Audit log + clip archive in encrypted object store</p>
-                <p>5. KPI dashboard and incident workflow in NodeHub portal</p>
+                <p>2. On-device inference on edge hardware</p>
+                <p>3. Event alerts via webhook or email</p>
+                <p>4. Clip archive in encrypted local storage</p>
+                <p>5. Dashboard for review and incident management</p>
               </div>
             </div>
           </div>

@@ -148,7 +148,7 @@ export const Footer = () => {
         <div className="border-t border-black/10">
           <div className="max-w-[980px] mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center gap-3">
             <p className="text-xs text-muted-foreground">
-              © 2026 node. All rights reserved.
+              © 2026 Praxis GB Ltd. All rights reserved.
             </p>
             <p className="text-xs text-muted-foreground">
               A <span className="text-foreground font-medium">Praxis GB</span> product

@@ -4,7 +4,7 @@ const highlights = [
   { icon: Shield, title: "Safety first engine", description: "Classifies and prioritises risk events with variable severity scoring." },
   { icon: Clock, title: "Proximity monitoring", description: "Live zone & distance analytics across all active operations." },
   { icon: TrendingUp, title: "Performance insights", description: "Machine-read continuous improvement metrics tied to continuous compliance." },
-  { icon: BarChart2, title: "Automated reporting", description: "ISO/OSHA-ready dashboards with gated approvals and secure audit logs." },
+  { icon: BarChart2, title: "Automated reporting", description: "Dashboards with gated approvals, secure audit logs, and exportable evidence packs." },
 ];
 
 export default function ProductHighlights() {

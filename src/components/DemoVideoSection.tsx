@@ -4,7 +4,7 @@ export default function DemoVideoSection() {
       <div className="max-w-[980px] mx-auto px-6">
         <div className="text-center mb-8">
           <p className="text-sm font-medium text-blue-500 uppercase tracking-widest">Demo</p>
-          <h2 className="text-3xl md:text-4xl font-semibold">Watch NodeHub in action</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold">Watch node in action</h2>
         </div>
 
         <div className="relative overflow-hidden rounded-3xl border border-black/10 bg-black">
