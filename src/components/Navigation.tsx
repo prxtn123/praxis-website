@@ -65,11 +65,13 @@ export const Navigation = () => {
             onClick={() => navigate("/node")} 
             className="flex items-center gap-2"
           >
-            <span className={`font-semibold text-xl tracking-tight transition-colors ${
-              isScrolled || isLightPage ? "text-foreground" : "text-white"
-            }`}>
-              .node
-            </span>
+            <img
+              src="/node-logo-compact.png"
+              alt=".node"
+              className={`h-5 w-auto transition-all ${
+                isScrolled || isLightPage ? "invert" : ""
+              }`}
+            />
           </button>
 
           {/* Desktop Navigation */}

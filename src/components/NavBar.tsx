@@ -38,7 +38,7 @@ export default function NavBar() {
           }`}
         >
           <img
-            src="/node-logo.png"
+            src="/node-logo-compact.png"
             alt=".node"
             className="h-5 w-auto"
           />
