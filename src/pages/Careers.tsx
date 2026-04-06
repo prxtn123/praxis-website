@@ -1,12 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
-const openings = [
-  { role: "AI Safety Engineer", location: "Hybrid - Manchester", type: "Full-time" },
-  { role: "Product Growth Manager", location: "Remote - EMEA", type: "Full-time" },
-  { role: "Site Reliability Engineer", location: "London", type: "Full-time" },
-];
-
 export default function Careers() {
   return (
     <div className="min-h-screen bg-white">
@@ -22,18 +16,16 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className="max-w-[980px] mx-auto px-6 pb-20">
-        <div className="grid gap-6 md:grid-cols-3">
-          {openings.map((job) => (
-            <article key={job.role} className="rounded-3xl border border-black/10 p-6 hover:shadow-md transition">
-              <h2 className="font-semibold text-lg mb-2">{job.role}</h2>
-              <p className="text-sm text-muted-foreground">{job.location}</p>
-              <p className="text-sm text-muted-foreground mb-4">{job.type}</p>
-              <a href="mailto:careers@praxisgb.com" className="text-blue-500 hover:underline text-sm">
-                Apply now
-              </a>
-            </article>
-          ))}
+      <section className="max-w-[980px] mx-auto px-6 py-20 text-center">
+        <div className="rounded-3xl border border-black/10 p-12">
+          <h2 className="text-2xl font-semibold mb-3">No open positions right now</h2>
+          <p className="text-muted-foreground max-w-lg mx-auto mb-6">
+            We don't have any vacancies at the moment, but we're always interested in hearing
+            from talented people. Send us your CV and we'll keep it on file.
+          </p>
+          <a href="mailto:careers@praxisgb.com" className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-black text-white font-medium hover:bg-black/80 transition">
+            Send your CV
+          </a>
         </div>
       </section>
 

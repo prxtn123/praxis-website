@@ -102,7 +102,7 @@ export default function About() {
             that cameras can see, we'd like to hear about it.
           </p>
           <a
-            href="mailto:tom.noble@praxisgb.com"
+            href="mailto:hello@praxisgb.com"
             className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-black text-white font-medium hover:bg-black/85"
           >
             Get in touch

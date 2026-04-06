@@ -170,10 +170,14 @@ export default function Homepage() {
               <h2 className="text-4xl font-bold leading-tight tracking-[-0.025em] text-white md:text-5xl">
                 Computer vision that works.
               </h2>
-              {/* IMAGE: Split-panel visual — edge device / camera setup in a live environment,
-                  showing hardware deployed on-site. 600x400 min. Dark treatment. */}
-              <div className="mt-6 aspect-[3/2] w-full rounded-xl bg-white/[0.04] border border-white/[0.06] flex items-center justify-center">
-                <span className="text-xs uppercase tracking-widest text-white/20">Image — edge device in situ</span>
+              {/* Edge device / camera in a live environment */}
+              <div className="mt-6 aspect-[3/2] w-full overflow-hidden rounded-xl border border-white/[0.06]">
+                <img
+                  src="/images/edge-device.jpg"
+                  alt="Security camera deployed on-site"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
             <p className="self-end text-lg leading-9 text-white/55 reveal">
@@ -264,10 +268,14 @@ export default function Homepage() {
                     <p className="text-sm text-white/40">— <span className="text-white/70">90%</span> detection accuracy in real operations</p>
                     <p className="text-sm text-white/40">— <span className="text-white/70">&lt;100ms</span> alert turnaround, on-device</p>
                   </div>
-                  {/* IMAGE: node dashboard screenshot — showing live detection feed with
-                      bounding boxes, safety score, and incident timeline. 800x500 min. */}
-                  <div className="mt-6 aspect-video w-full rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center">
-                    <span className="text-xs uppercase tracking-widest text-white/20">Screenshot — node dashboard</span>
+                  {/* node dashboard screenshot */}
+                  <div className="mt-6 aspect-video w-full overflow-hidden rounded-lg border border-white/[0.06]">
+                    <img
+                      src="/images/dashboard.jpg"
+                      alt="Analytics dashboard showing live detection data"
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                    />
                   </div>
                 </div>
                 <Link

@@ -45,7 +45,7 @@ export default function Product() {
             Drive performance improvement and lower risk exposure in one platform.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="mailto:tom.noble@praxisgb.com" className="rounded-full bg-white text-black py-3 px-8 font-medium hover:opacity-90 transition">
+            <a href="mailto:hello@praxisgb.com" className="rounded-full bg-white text-black py-3 px-8 font-medium hover:opacity-90 transition">
               Request Demo
             </a>
             <a href="/contact" className="rounded-full border border-white/60 text-white py-3 px-8 font-medium hover:bg-white/10 transition">
@@ -128,7 +128,7 @@ export default function Product() {
             Speak to our technical team and get a live deployment plan for your site.
           </p>
           <a
-            href="mailto:tom.noble@praxisgb.com"
+            href="mailto:hello@praxisgb.com"
             className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-black text-white font-medium hover:bg-black/80"
           >
             Book a technical walkthrough

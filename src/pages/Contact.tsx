@@ -39,7 +39,7 @@ export default function Contact() {
           <div className="rounded-3xl bg-[#f8f8fb] p-8 shadow-sm">
             <h2 className="text-2xl font-semibold mb-4">Get in touch</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Email us at <a href="mailto:tom.noble@praxisgb.com" className="text-blue-500 hover:text-blue-600">tom.noble@praxisgb.com</a> or call <a href="tel:+447542315784" className="text-blue-500 hover:text-blue-600">+44 7542 315784</a>.
+              Email us at <a href="mailto:hello@praxisgb.com" className="text-blue-500 hover:text-blue-600">hello@praxisgb.com</a> or call <a href="tel:+447542315784" className="text-blue-500 hover:text-blue-600">+44 7542 315784</a>.
             </p>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>Manchester, England</li>
@@ -87,7 +87,7 @@ export default function Contact() {
           <p className="text-muted-foreground max-w-xl mx-auto mb-5">
             Book a scheduled 15-minute discovery call to validate fit before you commit to a pilot.
           </p>
-          <a href="mailto:tom.noble@praxisgb.com" className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-black/10 bg-white hover:bg-gray-100">
+          <a href="mailto:hello@praxisgb.com" className="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-black/10 bg-white hover:bg-gray-100">
             Book discovery call
           </a>
         </div>

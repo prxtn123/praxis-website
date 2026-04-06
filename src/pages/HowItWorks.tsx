@@ -339,7 +339,7 @@ export default function HowItWorks() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:tom.noble@praxisgb.com"
+              href="mailto:hello@praxisgb.com"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-black/80 transition-colors"
             >
               Request a demo

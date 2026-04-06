@@ -12,7 +12,7 @@ const navLinks: { name: string; target?: string; path?: string }[] = [
   { name: "Contact", path: "/contact" },
 ];
 
-const APP_URL = "https://app.nodehub.uk";
+const APP_URL = "https://nodehub.uk";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);

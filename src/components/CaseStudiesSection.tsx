@@ -4,11 +4,13 @@ export default function CaseStudiesSection() {
       title: "Warehouse safety monitoring",
       outcome: "Live deployment with measurable safety improvements",
       metrics: ["Near-miss detection and alerting", "Automated evidence capture", "Ongoing — results to be published"],
+      image: "/images/site-warehouse.jpg",
     },
     {
       title: "Logistics centre pilot",
       outcome: "Pilot programme delivering real-time compliance data",
       metrics: ["Edge-deployed, no cloud dependency", "Integrated with existing camera infrastructure", "Ongoing — results to be published"],
+      image: "/images/site-logistics.jpg",
     },
   ];
 
@@ -22,9 +24,14 @@ export default function CaseStudiesSection() {
         <div className="grid gap-6 md:grid-cols-2">
           {caseStudies.map((caseStudy) => (
             <article key={caseStudy.title} className="apple-card p-6 hover:shadow-lg transition">
-              {/* IMAGE: Site photograph — warehouse interior showing node deployment
-                  context. Wide-angle, well-lit operational environment. 600x320 min. */}
-              <div className="mb-4 h-40 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-400 text-xs uppercase tracking-widest">Site photograph</div>
+              <div className="mb-4 h-40 overflow-hidden rounded-2xl">
+                <img
+                  src={caseStudy.image}
+                  alt={caseStudy.title}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
               <h3 className="text-xl font-semibold mb-2">{caseStudy.title}</h3>
               <p className="text-foreground/70 mb-4 font-medium">{caseStudy.outcome}</p>
               <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground">
