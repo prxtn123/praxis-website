@@ -24,11 +24,15 @@ export default function NavBar() {
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-[18px] md:px-10">
         <Link
           to="/"
-          className={`text-[11px] font-semibold uppercase tracking-[0.32em] transition-colors duration-200 ${
-            location.pathname === "/" ? "text-white" : "text-white/50 hover:text-white"
+          className={`transition-opacity duration-200 ${
+            location.pathname === "/" ? "opacity-100" : "opacity-50 hover:opacity-100"
           }`}
         >
-          Praxis GB
+          <img
+            src="/praxis-logo.png"
+            alt="Praxis GB"
+            className="h-5 w-auto"
+          />
         </Link>
 
         <Link
