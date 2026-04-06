@@ -9,8 +9,19 @@ const complianceFeatures = [
 
 export const ComplianceSection = () => {
   return (
-    <section id="compliance" className="py-32 bg-black text-white">
-      <div className="max-w-[980px] mx-auto px-6">
+    <section id="compliance" className="relative py-32 overflow-hidden text-white">
+      {/* Background photo */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/compliance.jpg"
+          alt=""
+          className="h-full w-full object-cover"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-black/80" />
+      </div>
+
+      <div className="relative max-w-[980px] mx-auto px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-sm font-medium text-blue-400 mb-4">Compliance</p>
 

@@ -25,10 +25,9 @@ export const Footer = () => {
   const location = useLocation();
 
   const handleNavClick = (target: string) => {
-    // If not on homepage, navigate to homepage first
-    if (location.pathname !== "/") {
-      navigate("/");
-      // Wait for navigation to complete, then scroll
+    // Scroll targets live on /node
+    if (location.pathname !== "/node") {
+      navigate("/node");
       setTimeout(() => {
         scrollToElement(target);
       }, 100);
@@ -116,9 +115,9 @@ export const Footer = () => {
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
                     {link.path ? (
-                      <a href={link.path} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                      <Link to={link.path} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                         {link.name}
-                      </a>
+                      </Link>
                     ) : (
                       <button onClick={() => handleNavClick(link.target ?? "home")} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                         {link.name}

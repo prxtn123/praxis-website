@@ -1,4 +1,4 @@
-import { Ruler, Users, AlertCircle, Route } from "lucide-react";
+import { Users, AlertCircle, Route } from "lucide-react";
 
 const metrics = [
   { icon: Users, label: "MMHE-Pedestrian", value: "2.5m+", desc: "Safe distance maintained" },

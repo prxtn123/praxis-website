@@ -33,11 +33,15 @@ export default function NavBar() {
 
         <Link
           to="/node"
-          className={`text-sm font-medium transition-colors duration-200 ${
-            onNode ? "text-white" : "text-white/50 hover:text-white"
+          className={`transition-opacity duration-200 ${
+            onNode ? "opacity-100" : "opacity-50 hover:opacity-100"
           }`}
         >
-          .node
+          <img
+            src="/node-logo.png"
+            alt=".node"
+            className="h-5 w-auto"
+          />
         </Link>
       </div>
     </header>

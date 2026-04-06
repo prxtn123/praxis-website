@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { FileText, CircleDashed } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const resources = [
   {
@@ -55,9 +56,9 @@ export default function Resources() {
               <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">{item.summary}</p>
               {item.link !== "#" ? (
-                <a href={item.link} className="inline-flex items-center gap-2 text-blue-500 hover:underline">
+                <Link to={item.link} className="inline-flex items-center gap-2 text-blue-500 hover:underline">
                   View resource <CircleDashed className="h-4 w-4" />
-                </a>
+                </Link>
               ) : (
                 <span className="text-sm text-muted-foreground italic">Coming soon</span>
               )}
@@ -71,9 +72,9 @@ export default function Resources() {
         <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
           Get in touch to discuss how node could work for your operation.
         </p>
-        <a href="/contact" className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-black text-white font-medium hover:bg-black/80">
+        <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-black text-white font-medium hover:bg-black/80">
           Contact us
-        </a>
+        </Link>
       </section>
 
       <Footer />

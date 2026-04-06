@@ -4,23 +4,31 @@ import { scrollToElement } from "@/lib/scroll";
 export const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* IMAGE: Full-bleed background — warehouse/logistics floor with camera
-          perspective, showing workers and machinery. Dark overlay at 60-70%
-          opacity for text legibility. Dimensions: 1920x1080 min. */}
-      <div className="absolute inset-0 bg-black/70">
-        {/* Replace with: <img src="/images/node-hero-bg.jpg" alt="" className="h-full w-full object-cover opacity-40" /> */}
+      {/* Background photo — warehouse / logistics floor */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/hero-node.jpg"
+          alt=""
+          className="h-full w-full object-cover"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-black/65" />
       </div>
 
 
       {/* Content */}
       <div className="relative z-10 max-w-[980px] mx-auto px-6 pt-20 pb-32 text-center">
-        {/* Overline */}
-        <p className="text-blue-400 text-sm font-medium tracking-wide mb-6 animate-fade-in">
-          AI-Powered Safety Platform
-        </p>
+        {/* Logo */}
+        <div className="mb-8 animate-fade-in">
+          <img
+            src="/node-logo.png"
+            alt=".node — Computer Vision. Built For Operators."
+            className="mx-auto h-20 md:h-28 lg:h-36 w-auto"
+          />
+        </div>
 
-        {/* Main Headline */}
-        <h1 className="text-5xl md:text-7xl lg:text-[80px] font-semibold text-white leading-[1.05] tracking-tight mb-6 animate-fade-in-delay-1">
+        {/* Headline */}
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-[1.1] tracking-tight mb-6 animate-fade-in-delay-1">
           The future of
           <br />
           logistics safety.

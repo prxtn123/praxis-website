@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "@/components/NavBar";
+import { Footer } from "@/components/Footer";
 import { Flag, Server, Settings, Receipt } from "lucide-react";
 
 function useScrollReveal() {
@@ -55,10 +56,15 @@ export default function Homepage() {
               Dimensions: 1920x1080 min. */}
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#070809]/80 via-[#070809]/60 to-[#070809]"
+            className="pointer-events-none absolute inset-0"
           >
-            <div className="absolute inset-0 bg-[#070809]/70" />
-            {/* Replace with: <img src="/images/hero-bg.jpg" alt="" className="h-full w-full object-cover opacity-40" /> */}
+            <img
+              src="/images/hero-praxis.jpg"
+              alt=""
+              className="h-full w-full object-cover"
+              loading="eager"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#070809]/70 via-[#070809]/60 to-[#070809]" />
           </div>
           {/* scanline grid */}
           <div
@@ -76,7 +82,7 @@ export default function Homepage() {
             className="pointer-events-none absolute inset-y-0 left-[58%] hidden w-px bg-white/[0.05] lg:block"
           />
 
-          <div className="relative mx-auto grid max-w-[1200px] min-h-screen grid-cols-1 items-center gap-8 px-6 pb-16 pt-24 md:px-10 lg:grid-cols-[1fr_400px] lg:pt-0">
+          <div className="relative mx-auto grid max-w-[1200px] min-h-screen grid-cols-1 items-center gap-8 px-6 pb-16 pt-36 md:px-10 lg:grid-cols-[1fr_400px] lg:pt-24">
             {/* Left */}
             <div className="flex flex-col justify-center space-y-10">
               <p className="reveal text-[10px] font-semibold uppercase tracking-[0.44em] text-blue-400">
@@ -243,7 +249,6 @@ export default function Homepage() {
                         src="/node-logo.png"
                         alt=".node"
                         className="mt-3 h-16 w-auto"
-                        style={{ mixBlendMode: "screen" }}
                       />
                     </div>
                     <span className="rounded-full bg-blue-500/10 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-blue-400">
@@ -332,20 +337,7 @@ export default function Homepage() {
 
       </main>
 
-      {/* ─── FOOTER ───────────────────────────────────────────────────── */}
-      <footer className="border-t border-white/[0.06] px-6 py-14 md:px-10" aria-label="Footer">
-        <div className="mx-auto flex max-w-[1200px] flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
-          <div className="space-y-2.5">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.32em] text-white">Praxis GB Ltd</p>
-            <p className="text-sm text-white/40">hello@praxisgb.com</p>
-            <p className="text-sm text-white/40">Greater Manchester, UK</p>
-          </div>
-          <div className="flex flex-col items-start gap-3 text-sm sm:items-end">
-            <Link to="/node" className="text-white/50 transition hover:text-white">.node →</Link>
-            <p className="text-white/20">© Praxis GB Ltd 2026</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

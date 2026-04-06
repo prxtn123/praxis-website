@@ -1,7 +1,25 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { useState } from "react";
 
 export default function Contact() {
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const name = data.get("name") as string;
+    const company = data.get("company") as string;
+    const email = data.get("email") as string;
+    const phone = data.get("phone") as string;
+    const message = data.get("message") as string;
+
+    const body = `Name: ${name}%0ACompany: ${company}%0AEmail: ${email}%0APhone: ${phone}%0A%0A${encodeURIComponent(message)}`;
+    const subject = encodeURIComponent(`Demo request from ${name} at ${company}`);
+    window.location.href = `mailto:hello@praxisgb.com?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+  };
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -30,26 +48,31 @@ export default function Contact() {
             </ul>
           </div>
 
-          <form className="space-y-5 rounded-3xl border border-black/10 p-8">
+          <form onSubmit={handleSubmit} className="space-y-5 rounded-3xl border border-black/10 p-8">
+            {submitted && (
+              <div className="rounded-xl bg-green-50 border border-green-200 p-4 text-sm text-green-800">
+                Your email client should have opened with a pre-filled message. If not, email us directly at <a href="mailto:hello@praxisgb.com" className="underline">hello@praxisgb.com</a>.
+              </div>
+            )}
             <label className="block">
               <span className="text-sm font-medium text-foreground">Name</span>
-              <input type="text" className="mt-1 w-full rounded-xl border border-black/10 px-3 py-2" placeholder="Your name" required />
+              <input type="text" name="name" className="mt-1 w-full rounded-xl border border-black/10 px-3 py-2" placeholder="Your name" required />
             </label>
             <label className="block">
               <span className="text-sm font-medium text-foreground">Company</span>
-              <input type="text" className="mt-1 w-full rounded-xl border border-black/10 px-3 py-2" placeholder="Company" required />
+              <input type="text" name="company" className="mt-1 w-full rounded-xl border border-black/10 px-3 py-2" placeholder="Company" required />
             </label>
             <label className="block">
               <span className="text-sm font-medium text-foreground">Email</span>
-              <input type="email" className="mt-1 w-full rounded-xl border border-black/10 px-3 py-2" placeholder="email@company.com" required />
+              <input type="email" name="email" className="mt-1 w-full rounded-xl border border-black/10 px-3 py-2" placeholder="email@company.com" required />
             </label>
             <label className="block">
               <span className="text-sm font-medium text-foreground">Phone</span>
-              <input type="tel" className="mt-1 w-full rounded-xl border border-black/10 px-3 py-2" placeholder="+44 ..." />
+              <input type="tel" name="phone" className="mt-1 w-full rounded-xl border border-black/10 px-3 py-2" placeholder="+44 ..." />
             </label>
             <label className="block">
               <span className="text-sm font-medium text-foreground">Message</span>
-              <textarea className="mt-1 w-full rounded-xl border border-black/10 px-3 py-2 min-h-[140px]" placeholder="Tell us about your operations and goals" required></textarea>
+              <textarea name="message" className="mt-1 w-full rounded-xl border border-black/10 px-3 py-2 min-h-[140px]" placeholder="Tell us about your operations and goals" required></textarea>
             </label>
             <button type="submit" className="w-full rounded-full bg-black text-white py-3 font-medium hover:bg-black/80 transition">
               Request a demo

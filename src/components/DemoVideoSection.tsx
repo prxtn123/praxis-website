@@ -8,8 +8,10 @@ export default function DemoVideoSection() {
         </div>
 
         <div className="relative overflow-hidden rounded-3xl border border-black/10 bg-black">
-          <div className="absolute inset-0 z-10 flex items-center justify-center">
-            <button className="rounded-full border-2 border-white/80 bg-white/20 px-5 py-3 text-white font-semibold">Play video</button>
+          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3">
+            <div className="rounded-full border-2 border-white/30 bg-white/10 px-5 py-3 text-white/60 font-semibold text-sm">
+              Demo video coming soon
+            </div>
           </div>
           <div className="aspect-video bg-gradient-to-r from-black to-gray-800 opacity-80" />
         </div>

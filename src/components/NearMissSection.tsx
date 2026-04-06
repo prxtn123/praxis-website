@@ -10,8 +10,8 @@ const detectionFeatures = [
 export const NearMissSection = () => {
   return (
     <section id="features" className="py-32 bg-[#f5f5f7]">
-      <div className="max-w-[980px] mx-auto px-6">
-        <div>
+      <div className="max-w-[1100px] mx-auto px-6">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           {/* Content */}
           <div>
             <p className="text-sm font-medium text-blue-500 mb-4">Near-Miss Prevention</p>
@@ -23,8 +23,8 @@ export const NearMissSection = () => {
             </h2>
 
             <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-              Identify and alert on potential near misses in real time - no high-vis vest, 
-              zone violations, unsafe proximity - so teams can intervene instantly.
+              Identify and alert on potential near misses in real time — no high-vis vest, 
+              zone violations, unsafe proximity — so teams can intervene instantly.
             </p>
 
             {/* Feature Pills */}
@@ -41,7 +41,16 @@ export const NearMissSection = () => {
             </div>
           </div>
 
-
+          {/* Photo */}
+          <div className="relative overflow-hidden rounded-2xl">
+            <img
+              src="/images/near-miss.jpg"
+              alt="Warehouse environment monitored by computer vision"
+              className="h-full w-full object-cover aspect-[4/5] lg:aspect-[3/4]"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/10" />
+          </div>
         </div>
       </div>
     </section>

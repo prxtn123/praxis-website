@@ -62,7 +62,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-12">
           {/* Logo */}
           <button 
-            onClick={() => handleNavClick({ target: "home" })} 
+            onClick={() => navigate("/node")} 
             className="flex items-center gap-2"
           >
             <span className={`font-semibold text-xl tracking-tight transition-colors ${
@@ -92,7 +92,7 @@ export const Navigation = () => {
           {/* CTAs */}
           <div className="hidden md:flex items-center gap-4">
             <button
-              onClick={() => handleNavClick({ target: "contact" })}
+              onClick={() => navigate("/contact")}
               className={`text-xs font-normal transition-colors ${
                 isScrolled || isLightPage
                   ? "text-blue-500 hover:text-blue-600"
@@ -139,7 +139,7 @@ export const Navigation = () => {
                 </button>
               ))}
               <button
-                onClick={() => handleNavClick({ target: "contact" })}
+                onClick={() => { setIsMobileMenuOpen(false); navigate("/contact"); }}
                 className="text-sm text-blue-500 hover:text-blue-600 py-2 transition-colors text-left"
               >
                 Request Demo
